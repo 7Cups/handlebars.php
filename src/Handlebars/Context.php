@@ -260,7 +260,7 @@ class Context
                     }
                     $current = $this->_findVariableInContext($current, $chunk, $strict);
                 }
-                prev($this->stack);
+                break;//This is causing each loops to search this AND parent context for key incorrectly //prev($this->stack);
 
             } while ($current === null && current($this->stack) !== false);
         }
